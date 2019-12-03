@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Proyecto.MainPage">
+
+    <StackLayout>
+
+        <Label Text="Datos del Clima" x:Name="etiqueta" 
+               HorizontalOptions="Center" FontSize="40" FontAttributes="Bold"
+           VerticalOptions="CenterAndExpand" />
+
+        <Label Text="Digita la ciudad:" x:Name="etiqueta2" 
+               HorizontalOptions="Center" FontSize="30" 
+           VerticalOptions="CenterAndExpand" />
+        <Grid Margin="28,35,20,20">
+
+            <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="88.4" />
+                    <ColumnDefinition Width="88.6" />
+                    </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="48"/>
+                    <RowDefinition Height="48"/>
+             </Grid.RowDefinitions>
+            
+
+            <Entry x:Name="cityEntry"
+                    Grid.ColumnSpan = "2"
+                    Text="Heredia" />
+            <Button Grid.ColumnSpan="2"
+                        Grid.Row="1"
+                        Text ="Ver Clima"
+                        Clicked="OnButtonClicked" />
+            <Label Grid.Row="2"
+                       Text="Ubicación:" />
+            <Label Grid.Row="2"
+                       Grid.Column="1"
+                       Text="{Binding Title}" />
+            <Label Grid.Row="3"
+                       Text="Temperatura:"/>
+            <Label Grid.Row="3"
+                       Grid.Column="1"
+                       Text="{Binding Main.Temperature}" />
+            <Label Grid.Row="4"
+                       Text="Velocidad Viento:"/>
+            <Label Grid.Row="4"
+                       Grid.Column="1"
+                       Text="{Binding Wind.Speed}" />
+            <Label Grid.Row="5"
+                       Text="Humedad:"/>
+            <Label Grid.Row="5"
+                       Grid.Column="1"
+                       Text="{Binding Main.Humidity}" />
+            <Label Grid.Row="6"
+                       Text="Visibilidad:"/>
+            <Label Grid.Row="6"
+                       Grid.Column="1"
+                       Text="{Binding Visibility}" />
+        </Grid>
+
+
+    </StackLayout>
+
+</ContentPage>
